@@ -24,6 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     if (isset($_POST['puceau'])) {
+
+        $_SESSION['hide_puceau'] = 1;
+
         $stmt = $db->prepare("UPDATE utilisateur SET puceau = 0 WHERE id_utilisateur = :id");
         $stmt->bindParam(":id", $id);
         $stmt->execute();
@@ -43,7 +46,12 @@ $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
 $utilisateur = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$puceau = ($utilisateur['puceau'] == 0) ? "" : "Oui"; 
+$puceau = ($utilisateur['puceau'] == 0) ? "" : "Oui";
+
+
+if (isset($_SESSION['hide_puceau']) && $_SESSION['hide_puceau'] == 1) {
+    $puceau = "";
+}
 
 echo "<table border='1' cellpadding='8' style='border-collapse:collapse; width:600px;'>";
 
