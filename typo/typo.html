@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeu de sensibilisation à la dyslexie</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- Import de la police OpenDyslexic pour améliorer l'accessibilité -->
+    <link href="https://fonts.googleapis.com/css2?family=OpenDyslexic:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script src="type.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 Une petite sensibilisation à la dyslexie ?</h1>
+        
+       
+        
+        <!-- Comparaison AVANT/APRÈS -->
+        <!-- <h2>📖 Comparaison : Texte NON accessible vs Texte ACCESSIBLE</h2>
+        <div class="comparison">
+            <div class="comparison-box bad-example">
+                <h4>❌ SANS règles d'accessibilité</h4>
+                <div class="text-sample">
+                    Les personnes dyslexiques rencontrent des difficultés avec ce type de texte : police Times New Roman, interligne serré, lettres collées, petite taille.
+                </div>
+                <p style="font-size: 0.85em; margin-top: 10px;"><strong>Problèmes :</strong> Police serif difficile, pas d'espacement, taille trop petite</p>
+            </div>
+            
+            <div class="comparison-box good-example">
+                <h4>✅ AVEC règles d'accessibilité</h4>
+                <div class="text-sample">
+                    Les personnes dyslexiques lisent mieux ce texte : police OpenDyslexic, interligne aéré, lettres espacées, grande taille.
+                </div>
+                <p style="font-size: 0.85em; margin-top: 10px;"><strong>Solutions :</strong> Police adaptée, espacement optimal, taille confortable</p>
+            </div>
+        </div>
+         -->
+        <p id="instructions">
+            <strong>🎯 Objectif :</strong> Essayez de lire le texte ci-dessous avec des erreurs typographiques et de le corriger. 
+            Cet exercice vous permet de comprendre les difficultés rencontrées par les personnes dyslexiques lors de la lecture.
+        </p>
+        
+        <div id="explanation"">
+            <strong>💡 Le saviez-vous ?</strong> Les personnes dyslexiques peuvent avoir du mal à distinguer certaines lettres ou leur orientation comme 'b' et 'd' ou encore le 'p' et le 'q'. 
+            Elles peuvent aussi percevoir les lettres inversées ou manquantes. Ce jeu simule ces expériences pour développer l'empathie.
+        </div>
+        
+        <h2>Texte à corriger :</h2>
+        <div id="typo-text" class="typo-text"></div>
+        
+        <input type="text" id="user-correction" placeholder="Recopiez le texte corrigé ici">
+        <button id="validate-btn">Valider ma réponse</button>
+        <button id="skip-btn">Passer</button>
+        
+        <div id="feedback"></div>
+        <div id="score">Score : 0/0</div>
+        
+        <div class="resources">
+            <h3>📚 Quelque ressources sur l'accessibilité typographique :</h3>
+            <ul>
+                <li><a href="https://opendyslexic.org/" target="_blank">OpenDyslexic</a> - Police spécialement conçue pour améliorer la lisibilité</li>
+                <li><a href="https://www.ux-republic.com/typographie-et-accessibilite-acte-1-comment-bien-choisir-sa-police-decriture/" target="_blank">UX Republic - Typographie et accessibilité</a> - Guide pour choisir une bonne police d'écriture</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+</body>
+</html>
