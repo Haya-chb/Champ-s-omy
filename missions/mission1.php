@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Jeu de sensibilisation à la dyslexie</title>
-    <link rel="stylesheet" href="./typo.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styles/mission1.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <!-- Import de la police OpenDyslexic pour améliorer l'accessibilité -->
     <link href="https://fonts.googleapis.com/css2?family=OpenDyslexic:wght@400;700&display=swap" rel="stylesheet">
 
-    <script src="typo.js" defer></script>
+    <script src="../js/mission1.js" defer></script>
 </head>
 
 <body>

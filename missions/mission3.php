@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("connexion.php");
+include("../connect.php");
 
 if (!isset($_SESSION['id_utilisateur'])) {
     header("Location: identification.php");
