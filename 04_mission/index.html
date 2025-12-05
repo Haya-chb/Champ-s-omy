@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission 4 - Laissons les pages souffler un peu </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="pop-up">
+        <!-- <div class="pop-up-content">
+            <h2>Bienvenue dans l'optimiseur d'images !</h2>
+            <p>Glissez-déposez les images non optimisées dans le sac pour les préparer à l'optimisation.</p>
+            <button class="close-btn">Commencer</button>
+        </div> -->
+        <div class="pop-up-win">
+            <h2>Optimisation terminée !</h2>
+            <p>Félicitations ! Toutes les images ont été optimisées et mises dans le sac !</p>
+            <a href="#" class="close-win-btn">Fermer</a>
+        </div>
+    </div>
+
+
+
+    <main>
+        <section class="left">
+            <section class="img-no-optmized-wrapper">
+                <h1>Images non optimisées</h1>
+                <section class="list-img-no-optimized">
+                    <div class="img1"></div>
+                    <div class="img2"></div>
+                    <div class="img3"></div>
+                    <div class="img4"></div>
+                    <div class="img5"></div>
+                </section>
+            </section>
+
+
+            <section class="bag-wrapper">
+                <h1>Sac</h1>
+                <div class="list-bag">
+                    <!-- Les images déplacées iront ici -->
+                </div>
+            </section>
+        </section>
+
+        <section class="right">
+            <section class="optimization">
+                <div class="optimization-box">
+                    <h1>Optimiser</h1>
+                    <div class="loading-optimization-container">
+                        <div class="loading-optimization">
+                            <div class="loading-bar"></div>
+                        </div>
+                        <p>Chargement...</p>
+                    </div>
+                    <button class="optimize-btn">Optimiser les images</button>
+                </div>
+                <div class="one-little-box-optimized-wrapper">
+                    <h2>Images optimisées</h2>
+                    <div class="one-little-box-optimized">
+                        <!-- Les images optimisées iront ici -->
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
