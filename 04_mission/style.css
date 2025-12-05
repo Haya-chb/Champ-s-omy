@@ -205,8 +205,11 @@ div.list-bag {
     display: none;
 }
 
+.pop-up-content {
+    padding: 30px;
+}
 
-.pop-up-content, .pop-up-win {
+.pop-up-win {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -220,5 +223,10 @@ div.list-bag {
     border: 2px solid black;
     padding: 20px;
     z-index: 1000;
+}
+
+p.button-to-collection {
+    text-align: center;
+    padding-top: 30px;
 }
 
