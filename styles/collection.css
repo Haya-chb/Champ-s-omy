@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Couleurs */
+:root {
+    --color-dark: #2B2723;
+    --color-light: #EBDCC1;
+}
+
+/* Police Karina */
+@font-face {
+    font-family: 'Karina';
+    src: url('../fonts/Karina-Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Karina', sans-serif;
+    background-color: #9CAF7A;
+}
+
+/* ───────────── HEADER / NAV ───────────── */
+
+
+header {
+    background: var(--color-dark);
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+
+nav {
+    border: 6px solid var(--color-light);
+    padding: 0 20px;
+    text-align: center;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    position: relative;
+
+    gap: 200px;
+    /* margin: 0 20px; */
+}
+
+nav a {
+    color: var(--color-light);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+nav a:first-child {
+    margin-left: 30px;
+}
+
+nav a:last-child {
+    margin-right: 30px;
+}
+
+nav a.active {
+    color: black;
+    background-color: var(--color-light);
+    padding: 10px 20px;
+
+}
+
+div.logo {
+    transform: translateY(50%);
+    /* position: absolute; */
+    top: 20px;
+    border: 6px solid var(--color-light);
+    padding: 20px 80px;
+    background-color: var(--color-dark);
+    border-radius: 6px;
+    outline: 10px solid var(--color-dark);
+}
+/* ───────────── BOUTONS ───────────── */
+
+main {
+    position: relative;
+    padding: 180px;
+}
+
+main h1 {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+.list-attack-cards {
+    width: 100%;
+    padding: 100px 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+
+}
+
+.attack-card {
+    border: var(--color-light) solid 6px;
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    outline: 10px solid var(--color-dark);
+    width: 300px;
+
+    padding: 60px 20px 0 20px;
+
+
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.attack-card:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.attack-card h2 {
+    margin-top: 80px;
+    font-size: 1.2rem;
+}
