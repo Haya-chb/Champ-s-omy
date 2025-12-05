@@ -25,7 +25,7 @@
         </section>
     </main>
     <footer>
+      <a href="mentions_legales.html">Mentions Légales</a>
 
     </footer>
-</body>
 </html>

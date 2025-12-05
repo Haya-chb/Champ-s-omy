@@ -16,6 +16,7 @@
         <a href="missions/mission3.php" class="button button3">Mission 3 - <br> Oups tes données vont fuiter. Protège les.</a>
     </main>
     <footer>
+      <a href="mentions_legales.html">Mentions Légales</a>
 
     </footer>
 </body>
