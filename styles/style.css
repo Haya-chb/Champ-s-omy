@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-dark: #2B2723;
+    --color-light: #EBDCC1;
+}
+
+/* Import de la police Karina depuis le dossier fonts */
+@font-face {
+    font-family: 'Karina';
+    src: url('../fonts/karina_4/Karina.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Karina', sans-serif; /* appliquer la police Karina */
+    letter-spacing: 3px;    
+
+
+    background-image: url('../images/bg_map.png');
+    background-repeat: repeat;   
+    background-size: cover;         
+    
+    /* background-color: #f0f0f0; */
+}
+
+header {
+    background: var(--color-dark);
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+
+nav {
+    border: 6px solid var(--color-light);
+    padding: 0 20px;
+    text-align: center;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    position: relative;
+
+    gap: 200px;
+    /* margin: 0 20px; */
+}
+
+nav a {
+    color: var(--color-light);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+nav a:first-child {
+    margin-left: 30px;
+}
+
+nav a:last-child {
+    margin-right: 30px;
+}
+
+nav a.active {
+    color: black;
+    background-color: var(--color-light);
+    padding: 10px 20px;
+
+}
+
+div.logo {
+    transform: translateY(50%);
+    /* position: absolute; */
+    top: 20px;
+    border: 6px solid var(--color-light);
+    padding: 20px 80px;
+    background-color: var(--color-dark);
+    border-radius: 6px;
+    outline: 10px solid var(--color-dark);
+}
+
+
+/* BOUTONS */
+
+main {
+    position: relative;
+    padding: 80px;
+}
+
+a.button {
+    padding: 60px 120px;
+    border: var(--color-light) solid 6px;
+    background-color: var(--color-dark);
+    color: var(--color-light);
+
+    outline: 10px solid var(--color-dark); 
+
+
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+a.button1 {
+    position: absolute;
+    top: 200px;
+    left: 80px;
+}
+
+a.button2 {
+    position: absolute;
+    top: 600px;
+    right: 80px;
+}
+
+a.button3 {
+    position: absolute;
+    top: 900px;
+    left: 80px;
+}
+
+a.button4 {
+    position: absolute;
+    top: 1500px;
+    right: 80px;
+    margin-bottom: 80px;
+}
+
+
+
+a.button:hover {
+    text-decoration: underline;
+    transform: scale(1.03);
+    cursor: pointer;
+}

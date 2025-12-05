@@ -1,56 +1,13 @@
 <?php
 session_start();
-include('connect.php');
+include('connect.inc.php');
 
 
-echo '<form action="inscription.php" method="post">';
-
-echo '<div>';
-echo '<label for="login">Login :</label><br>';
-echo '<input type="text" id="login" name="login" required>';
-echo '</div>';
-
-echo '<div>';
-echo '<label for="pswd">Mot de passe :</label><br>';
-echo '<input type="password" id="pswd" name="pswd" required>';
-echo '</div>';
-
-
-echo "<label for='sang'>Quel est ton groupe sanguin ? :</label>
-<select name='sang' id='sang'>";
-
-$stmt = $db->query('SELECT * FROM sang');
-$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-foreach ($result as $row) {
-    echo '<option value="'.$row['id_sang'].'">'.$row['groupe'].'</option>';
-}
-
-echo "</select><br><br>";
-
-
-echo '<div>';
-echo '<label for="adresse">Adresse :</label><br>';
-echo '<input type="text" id="adresse" name="adresse">';
-echo '</div><br>';
-
-echo '<fieldset>';
-echo '<legend>Es-tu puceau ?</legend>';
-
-echo '<label><input type="radio" name="puceau" value="0" required> Non</label>';
-echo '<label><input type="radio" name="puceau" value="1" required> Oui</label>';
-
-echo '</fieldset>';
-
-
-echo '<input type="submit" name="valider_inscription" value="Inscription">';
-
-echo '</form>';
-
-
+// ==========================
+// TRAITEMENT DU FORMULAIRE
+// ==========================
 
 if (isset($_POST['valider_inscription'])) {
-
     $login   = $_POST['login'];
     $mdp     = $_POST['pswd'];
     $hash    = password_hash($mdp, PASSWORD_DEFAULT);
@@ -59,8 +16,6 @@ if (isset($_POST['valider_inscription'])) {
     $adresse = $_POST['adresse'] ?? null;
     $sang    = (int) $_POST['sang'];
 
-
-   
     $check = $db->prepare('SELECT login FROM utilisateur WHERE login = :login LIMIT 1');
     $check->bindParam(':login', $login);
     $check->execute();
@@ -69,7 +24,6 @@ if (isset($_POST['valider_inscription'])) {
         echo '<p style="color:red;">Ce login est déjà pris.</p>';
     } else {
 
-       
         $stmt = $db->prepare(
             'INSERT INTO utilisateur (login, password, puceau, adresse, fk_idsang)
              VALUES (:login, :password, :puceau, :adresse, :sang)'
@@ -83,7 +37,6 @@ if (isset($_POST['valider_inscription'])) {
 
         $stmt->execute();
 
-       
         $id = $db->lastInsertId();
         $_SESSION['id_utilisateur'] = $id;
 
@@ -92,3 +45,65 @@ if (isset($_POST['valider_inscription'])) {
     }
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'inscription</title>
+</head>
+<body>
+    <form action="inscription.php" method="post">
+        <div>
+            <label for="login">Login :</label><br>
+            <input type="text" id="login" name="login" required>
+        </div>
+
+        <div>
+            <label for="pswd">Mot de passe :</label><br>
+            <input type="password" id="pswd" name="pswd" required>
+        </div>
+
+        <label for="sang">Quel est ton groupe sanguin ? :</label>
+        <select name="sang" id="sang">
+            <?php
+                $stmt = $db->query('SELECT * FROM sang');
+                $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                foreach ($result as $row) {
+                    echo '<option value="'.$row['id_sang'].'">'.$row['groupe'].'</option>';
+                }
+
+                // -------------------------
+                // INSERTION DES OPTIONS PHP
+                // -------------------------
+
+                $stmt = $db->query('SELECT * FROM sang');
+                $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                foreach ($result as $row) {
+                    echo '<option value="'.$row['id_sang'].'">'.$row['groupe'].'</option>';
+                }
+            ?>
+        </select><br><br>
+
+
+        <div>
+            <label for="adresse">Adresse :</label><br>
+            <input type="text" id="adresse" name="adresse">
+        </div><br>
+
+        <fieldset>
+            <legend>Es-tu puceau ?</legend>
+            <label><input type="radio" name="puceau" value="0" required> Non</label>
+            <label><input type="radio" name="puceau" value="1" required> Oui</label>
+        </fieldset>
+
+        <input type="submit" name="valider_inscription" value="Inscription">
+
+    </form>
+
+</body>
+</html>
+
